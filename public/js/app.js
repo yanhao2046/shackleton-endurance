@@ -164,6 +164,21 @@ function selectCharacter(key) {
   document.getElementById("bio-name").textContent = c.name;
   document.getElementById("bio-role").textContent = `${c.role} · ${c.nameEn}`;
   document.getElementById("bio-text").textContent = c.bio;
+  const figure = document.getElementById("bio-figure");
+  const source = document.getElementById("bio-source");
+  if (c.image?.src) {
+    document.getElementById("bio-image").src = c.image.src;
+    document.getElementById("bio-image").alt = c.image.alt || c.nameEn || c.name;
+    document.getElementById("bio-caption").textContent = c.image.caption || "资料图片";
+    source.href = c.image.sourceUrl || c.image.src;
+    source.hidden = false;
+    figure.hidden = false;
+  } else {
+    document.getElementById("bio-image").removeAttribute("src");
+    document.getElementById("bio-caption").textContent = "";
+    source.hidden = true;
+    figure.hidden = true;
+  }
   document.getElementById("bio-card").hidden = false;
   document.querySelectorAll(".cast-chip").forEach(ch => ch.classList.toggle("active", ch.dataset.key === key));
 }
