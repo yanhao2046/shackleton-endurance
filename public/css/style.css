@@ -57,11 +57,41 @@ button {
   min-width: 0;
 }
 
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
 .title-block h1 {
   margin: 0;
   font-size: 20px;
   line-height: 1.1;
   font-weight: 650;
+  white-space: nowrap;
+}
+
+.afterstory-cta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  color: #12364a;
+  background: #f2c14e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.afterstory-cta:hover {
+  background: #ffd46d;
+  color: #0f2c3c;
 }
 
 .meta {
@@ -740,6 +770,18 @@ figcaption {
 
   .title-block h1 {
     font-size: 18px;
+  }
+
+  .title-row {
+    width: 100%;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .afterstory-cta {
+    min-height: 30px;
+    padding: 0 12px;
+    font-size: 13px;
   }
 
   .actions {
