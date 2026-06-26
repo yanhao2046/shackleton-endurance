@@ -330,6 +330,11 @@ const ROUTE_DATA = {
       url: "https://www.coolantarctica.com/Antarctica%20fact%20file/History/Ernest_Shackleton_map_time_line.php"
     },
     {
+      label: "Cool Antarctica: Shackleton Endurance Expedition 1-4",
+      detail: "南极影像图库的主要图片来源，覆盖出发、困冰、詹姆斯·凯尔德号和救援四段图文。",
+      url: "https://www.coolantarctica.com/Antarctica%20fact%20file/History/Shackleton-Endurance-Trans-Antarctic_expedition.php"
+    },
+    {
       label: "Wikipedia: Imperial Trans-Antarctic Expedition",
       detail: "校对威德尔海被困位置、冰上行军、耐心营、小艇航行、南乔治亚穿越和救援叙事。",
       url: "https://en.wikipedia.org/wiki/Imperial_Trans-Antarctic_Expedition"

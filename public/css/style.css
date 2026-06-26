@@ -698,6 +698,19 @@ main {
   font-size: 13px;
 }
 
+.photo-source {
+  display: block;
+  margin-top: 7px;
+  color: #0f6b8f;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.photo-source:hover {
+  text-decoration: underline;
+}
+
 figure {
   margin: 0;
   padding: 10px;
