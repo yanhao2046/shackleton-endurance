@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>熬：极地求生700天 - 坚忍号旅程地图（含原文摘录·人物小传）</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="title-block">
+      <h1>熬：极地求生700天</h1>
+      <div class="meta">沙克尔顿 / 坚忍号 / 12 个阶段 · 122 条原文摘录 · 12 位人物</div>
+    </div>
+    <div class="actions">
+      <button id="fit-antarctic" class="tool-btn" type="button" title="聚焦南极段">南极段</button>
+      <button id="fit-all" class="tool-btn" type="button" title="查看全程">全程</button>
+      <button id="open-book-maps" class="tool-btn" type="button" title="查看 EPUB 内置路线图">书内地图</button>
+      <button id="open-sources" class="tool-btn" type="button" title="查看使用依据">依据</button>
+      <a id="open-afterstory" class="tool-btn tool-link" href="afterstory.html" target="_blank" rel="noopener" title="《熬》后传：1916—1922 与队员后半生">后传</a>
+      <button id="toggle-panel" class="icon-btn" type="button" title="展开 / 收起阅读栏">☰</button>
+    </div>
+  </header>
+
+  <!-- 人物横栏 -->
+  <div class="cast-bar" id="cast-bar">
+    <span class="cast-label">人物</span>
+    <div class="cast-chips" id="cast-chips"></div>
+  </div>
+
+  <main>
+    <div id="map"></div>
+
+    <aside id="reading" class="reading open">
+      <div class="reading-head">
+        <div class="stage-chips" id="stage-chips" aria-label="阶段选择"></div>
+        <div class="stage-headline">
+          <span class="hl-kicker" id="hl-kicker"></span>
+          <h2 id="hl-title"></h2>
+          <div class="hl-meta" id="hl-meta"></div>
+        </div>
+        <div class="stage-nav">
+          <button id="prev-stage" type="button" title="上一阶段">‹ 上一阶段</button>
+          <span id="stage-counter"></span>
+          <button id="next-stage" type="button" title="下一阶段">下一阶段 ›</button>
+        </div>
+      </div>
+
+      <div class="reading-body">
+        <section id="rtab-stage" class="rpane active">
+          <p class="stage-summary" id="stage-summary"></p>
+
+          <section class="excerpts">
+            <h3 class="excerpts-title">原文摘录 <span class="count" id="excerpt-count"></span></h3>
+            <div id="excerpt-list" class="excerpt-list"></div>
+          </section>
+
+          <details class="fold">
+            <summary>地点对应</summary>
+            <ul id="detail-places"></ul>
+          </details>
+
+          <details class="fold">
+            <summary>读书定位</summary>
+            <p id="detail-book" class="fold-body"></p>
+          </details>
+        </section>
+      </div>
+    </aside>
+  </main>
+
+  <!-- 人物小传悬浮卡片 -->
+  <div id="bio-card" class="bio-card" hidden>
+    <button id="bio-close" class="bio-close" type="button" title="关闭">×</button>
+    <div class="bio-rank" id="bio-rank"></div>
+    <h3 id="bio-name"></h3>
+    <div class="bio-role" id="bio-role"></div>
+    <p class="bio-text" id="bio-text"></p>
+  </div>
+
+  <!-- 书内地图弹窗 -->
+  <div id="book-map-modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close="book-map-modal"></div>
+    <div class="modal-body">
+      <button class="close-btn" type="button" data-close="book-map-modal" title="关闭">×</button>
+      <h2>EPUB 内置路线图</h2>
+      <div class="book-map-grid">
+        <figure>
+          <img src="assets/book-map-overview.jpeg" alt="坚忍号南极探险总览图">
+          <figcaption>总览：南乔治亚、威德尔海、大象岛、詹姆斯·凯尔德号航线。</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/book-map-drift.jpeg" alt="坚忍号漂流路线图">
+          <figcaption>漂流：被困、弃船、沉没、上小船、抵达大象岛。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- 依据弹窗 -->
+  <div id="sources-modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close="sources-modal"></div>
+    <div class="modal-body modal-narrow">
+      <button class="close-btn" type="button" data-close="sources-modal" title="关闭">×</button>
+      <div class="source-block">
+        <h2>使用依据</h2>
+        <p>阶段划分与原文摘录来自 OB 文档；人物身份取自书内《帝国穿越南极探险队队员名单》，高光时刻均出自原文。路线和地点首先参照 EPUB 内置两张路线图，再用外部资料校正关键日期、地点和坐标。冰上营地与漂流路线受浮冰漂移影响，除已公开明确坐标的点外均标为约略位置。</p>
+        <ul id="source-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/route-data.js"></script>
+  <script src="js/excerpts-data.js"></script>
+  <script src="js/characters-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
