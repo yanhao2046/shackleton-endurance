@@ -16,9 +16,24 @@ python3 -m http.server 8766 --directory public
 
 Open `http://127.0.0.1:8766/`.
 
-## Deploy
+## Deploy From GitHub
 
-This project uses Cloudflare Workers Static Assets.
+This project deploys from GitHub Actions to Cloudflare Workers Static Assets.
+
+Required GitHub repository secrets:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+Every push to `main` runs `.github/workflows/deploy-cloudflare.yml`.
+
+Manual rerun:
+
+```bash
+gh workflow run deploy-cloudflare.yml
+```
+
+Optional local deploy, for emergency use only:
 
 ```bash
 npx wrangler deploy
