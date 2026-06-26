@@ -286,9 +286,6 @@ function initControls() {
     setTimeout(() => map.invalidateSize(), 230);
   });
 
-  document.getElementById("fit-all").addEventListener("click", fitAll);
-  document.getElementById("fit-antarctic").addEventListener("click", fitAntarctic);
-
   document.getElementById("prev-stage").addEventListener("click", () => {
     if (selectedStageId > 1) selectStage(selectedStageId - 1, true);
   });
@@ -302,7 +299,7 @@ function initControls() {
 }
 
 function initModals() {
-  [["open-book-maps", "book-map-modal"], ["open-sources", "sources-modal"]].forEach(([btn, modal]) => {
+  [["open-photos", "photos-modal"], ["open-book-maps", "book-map-modal"], ["open-sources", "sources-modal"]].forEach(([btn, modal]) => {
     document.getElementById(btn).addEventListener("click", () => {
       document.getElementById(modal).hidden = false;
     });
@@ -317,6 +314,7 @@ function initModals() {
 
   document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
+      document.getElementById("photos-modal").hidden = true;
       document.getElementById("book-map-modal").hidden = true;
       document.getElementById("sources-modal").hidden = true;
       closeBio();

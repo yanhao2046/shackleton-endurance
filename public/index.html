@@ -17,8 +17,7 @@
       <div class="meta">沙克尔顿 / 坚忍号 / 12 个阶段 · 122 条原文摘录 · 12 位人物</div>
     </div>
     <div class="actions">
-      <button id="fit-antarctic" class="tool-btn" type="button" title="聚焦南极段">南极段</button>
-      <button id="fit-all" class="tool-btn" type="button" title="查看全程">全程</button>
+      <button id="open-photos" class="tool-btn" type="button" title="查看南极生活与工作照片">南极影像</button>
       <button id="open-book-maps" class="tool-btn" type="button" title="查看 EPUB 内置路线图">书内地图</button>
       <button id="open-sources" class="tool-btn" type="button" title="查看使用依据">依据</button>
       <button id="toggle-panel" class="icon-btn" type="button" title="展开 / 收起阅读栏">☰</button>
@@ -86,6 +85,49 @@
       </figcaption>
     </figure>
     <p class="bio-text" id="bio-text"></p>
+  </div>
+
+  <!-- 南极生活与工作照片 -->
+  <div id="photos-modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close="photos-modal"></div>
+    <div class="modal-body">
+      <button class="close-btn" type="button" data-close="photos-modal" title="关闭">×</button>
+      <h2>南极生活与工作照片</h2>
+      <div class="photo-grid">
+        <figure>
+          <img src="assets/photos/Tom-Crean-with-puppies.jpg" alt="克林与雪橇犬幼犬">
+          <figcaption><strong>船上生活 · 雪橇犬</strong> 克林抱着一窝雪橇犬幼犬；这些狗既是运输力量，也是长时间困冰中的日常牵挂。</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/dogs-endurance-med.jpg" alt="坚忍号甲板上的雪橇犬">
+          <figcaption><strong>船上生活 · 甲板</strong> 雪橇犬挤在坚忍号甲板上，也能看出船体相对狭小，生活、工作和动物照料都压在同一空间里。</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/endurance5-med.jpg" alt="队员尝试解救坚忍号">
+          <figcaption><strong>冰上工作 · 破冰</strong> 队员尝试从浮冰中解救坚忍号；这类重复劳动贯穿被困阶段，结果常常被风、冰压和温度重新抹掉。</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/dump-camp-med.jpg" alt="弃船后的大洋营">
+          <figcaption><strong>冰上工作 · 抢救物资</strong> 弃船后的营地和物资堆，展示从“航海探险”转为“冰上求生”后的工作重心。</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/floe-med.jpg" alt="浮冰上的救生艇">
+          <figcaption><strong>漂流营地 · 救生艇</strong> 三艘救生艇被拖上浮冰，既是最后交通工具，也是所有人心理上的退路。</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/snuggery-med.jpg" alt="大象岛营地棚屋">
+          <figcaption><strong>漂流营地 · 棚屋</strong> 大象岛上的“棚屋”由翻扣的救生艇和帆布搭成，22 人在这里等待救援四个多月。</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/LaunchingTheJamesCaird2-med.jpg" alt="詹姆斯·凯尔德号从大象岛出发">
+          <figcaption><strong>求援 · 凯尔德号</strong> 詹姆斯·凯尔德号从大象岛出发，六人去南乔治亚求援，留下王尔德带队守岛。</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/photos/rescue-yelcho-med.jpg" alt="叶尔秋湖号救援大象岛队员">
+          <figcaption><strong>救援 · 叶尔秋湖号</strong> 叶尔秋湖号接走大象岛留守队员，整场旅程从“活下去”转入“全部救回”的结尾。</figcaption>
+        </figure>
+      </div>
+    </div>
   </div>
 
   <!-- 书内地图弹窗 -->
